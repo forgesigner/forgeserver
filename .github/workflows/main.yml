@@ -23,4 +23,6 @@ jobs:
       run: ssh -vvv -i ~/.ssh/id_rsa nikita_khramov@34.16.177.159 "cd /home/nikita_khramov/forger/forgeserver && 
         git pull && 
         source /home/nikita_khramov/forger/forgervenv/bin/activate &&
-        pip3 install -r /home/nikita_khramov/forger/forgeserver/requirements.txt "
+        pip3 install -r /home/nikita_khramov/forger/forgeserver/requirements.txt &&
+        chmod +x docker.sh &&
+        ./docker.sh"
