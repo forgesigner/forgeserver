@@ -2,7 +2,6 @@ import subprocess
 from dataclasses import dataclass
 from typing import Union
 
-import argparse as argparse
 from flask import Flask, request, jsonify
 from werkzeug.datastructures import FileStorage
 
@@ -11,8 +10,8 @@ import os
 
 app = Flask(__name__)
 
-app.config['IMAGES'] = '../signheredetectordataset/CUAD_v1_rasterized'
-app.config['ANNOTATIONS'] = '../signheredetectordataset/CUAD_v1_annotations'
+app.config['IMAGES'] = '/home/nikita_khramov/forger/signheredetectordataset/CUAD_v1_rasterized'
+app.config['ANNOTATIONS'] = '/home/nikita_khramov/forger/signheredetectordataset/CUAD_v1_annotations'
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = {'png', 'json'}
