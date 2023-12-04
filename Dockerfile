@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["python", "--port=5000", "server:server"]
+CMD ["python", "server.py", "--port", "5000"]
