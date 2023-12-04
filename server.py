@@ -49,8 +49,8 @@ def save_files(annot: FileStorage, image: FileStorage):
     annot.save(os.path.join(app.config['ANNOTATIONS'], "0" * (5 - len(str(n))) + str(n), annot.filename))
     image.save(os.path.join(app.config['IMAGES'], "0" * (5 - len(str(n))) + str(n), image.filename))
     global file_counter
-    file_counter += 2
-    if file_counter >= 50:
+    file_counter += 1
+    if file_counter >= 1:
         run_script()
         file_counter = 0
 
