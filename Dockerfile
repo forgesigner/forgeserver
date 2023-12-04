@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-WORKDIR /
+WORKDIR /forger/forgeserver
 COPY . .
 
 COPY requirements.txt ./
