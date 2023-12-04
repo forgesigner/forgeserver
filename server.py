@@ -98,7 +98,4 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    argparse = argparse.ArgumentParser()
-    argparse.add_argument('--port', default=5000)
-    args = argparse.parse_args()
-    app.run(host='34.16.177.159', port=args.port)
+    app.run()
