@@ -21,8 +21,8 @@ file_counter = 0
 
 @dataclass
 class DataItem:
-    annot: Union[FileStorage | None]
-    image: Union[FileStorage | None]
+    annot: Union[FileStorage, None]
+    image: Union[FileStorage, None]
 
 
 def is_authorized(api_key):
