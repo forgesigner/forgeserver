@@ -1,6 +1,8 @@
 import requests
 from config import API_KEY
 
+# EXAMPLE USAGE
+
 if __name__ == '__main__':
 
     url = 'http://0.0.0.0:5000/upload'
