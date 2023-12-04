@@ -2,6 +2,7 @@ import subprocess
 from dataclasses import dataclass
 from typing import Union
 
+import argparse as argparse
 from flask import Flask, request, jsonify
 from werkzeug.datastructures import FileStorage
 
@@ -97,4 +98,7 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    argparse = argparse.ArgumentParser()
+    argparse.add_argument('--port', default=5000)
+    args = argparse.parse_args()
+    app.run(host='34.16.177.159', port=args.port)
