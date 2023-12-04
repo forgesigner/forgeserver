@@ -26,5 +26,4 @@ jobs:
         source /home/nikita_khramov/forger/forgervenv/bin/activate &&
         pip3 install -r /home/nikita_khramov/forger/forgeserver/requirements.txt &&
         chmod +x docker.sh &&
-        cd / &&
         ./docker.sh"

@@ -1,4 +1,5 @@
 SERVER_CONTAINER="server"
+cd /
 sudo docker build . -f /home/nikita_khramov/forger/forgeserver/Dockerfile -t $SERVER_CONTAINER
 PWD=$(pwd)
 
