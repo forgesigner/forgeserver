@@ -14,5 +14,5 @@ if [ "$(sudo docker ps -a -q -f name=$SERVER_CONTAINER)" ]; then
     sudo docker rm -f $SERVER_CONTAINER
 fi
 
-sudo docker run -d -v /home/nikita_khramov/forger/sign-here-detector:/forger/sign-here-detector -v /home/nikita_khramov/forger/signheredetectordataset:/forger/signheredetectordataset -p 5000:5000 --name $SERVER_CONTAINER --restart unless-stopped $SERVER_CONTAINER
+sudo docker run -d -v /home/nikita_khramov/forger/sign-here-detector:~/forger/sign-here-detector -v /home/nikita_khramov/forger/signheredetectordataset:~/forger/signheredetectordataset -p 5000:5000 --name $SERVER_CONTAINER --restart unless-stopped $SERVER_CONTAINER
 sudo docker logs $SERVER_CONTAINER
