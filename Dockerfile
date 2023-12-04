@@ -8,8 +8,9 @@ FROM nvidia/cuda:${CUDA}-base-ubuntu${UBUNTU}
 FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA_SHORT}-cudnn${CUDNN}-devel
 
 WORKDIR /root/forger/forgeserver
-COPY /home/nikita_khramov/forger/signheredetectordataset /root/forger/signheredetectordataset
 COPY /home/nikita_khramov/forger/sign-here-detector /root/forger/sign-here-detector
+COPY /home/nikita_khramov/forger/signheredetectordataset /root/forger/signheredetectordataset
+/home/nikita_khramov/forger/sign-here-detector
 COPY . .
 
 COPY requirements.txt ./
