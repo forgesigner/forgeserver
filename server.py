@@ -1,6 +1,6 @@
 import subprocess
 from dataclasses import dataclass
-from typing import Optional
+from typing import Union
 
 from flask import Flask, request, jsonify
 from werkzeug.datastructures import FileStorage
@@ -21,8 +21,8 @@ file_counter = 0
 
 @dataclass
 class DataItem:
-    annot: Optional[FileStorage | None]
-    image: Optional[FileStorage | None]
+    annot: Union[FileStorage | None]
+    image: Union[FileStorage | None]
 
 
 def is_authorized(api_key):
