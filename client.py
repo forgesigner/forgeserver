@@ -5,7 +5,7 @@ from config import API_KEY
 
 if __name__ == '__main__':
 
-    url = 'http://0.0.0.0:5000/upload'
+    url = 'http://34.16.177.159:5000/upload'
     headers = {'Authorization': API_KEY}
     file_pairs = [
         ('/home/xram/Desktop/1.json', '/home/xram/Desktop/1.png'),
