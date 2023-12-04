@@ -10,8 +10,8 @@ import os
 
 app = Flask(__name__)
 
-app.config['IMAGES'] = '~/forger/signheredetectordataset/CUAD_v1_rasterized'
-app.config['ANNOTATIONS'] = '~/forger/signheredetectordataset/CUAD_v1_annotations'
+app.config['IMAGES'] = '/home/usr/forger/signheredetectordataset/CUAD_v1_rasterized'
+app.config['ANNOTATIONS'] = '/home/usr/forger/signheredetectordataset/CUAD_v1_annotations'
 app.config['MAX_CONTENT_LENGTH'] = 32 * 1024 * 1024
 
 ALLOWED_EXTENSIONS = {'png', 'json'}
@@ -39,7 +39,7 @@ def num_of_folders():
 
 
 def run_script():
-    subprocess.run(["/bin/bash", "~/forger/sign-here-detector/train.sh"])
+    subprocess.run(["/bin/bash", "/home/usr/forger/sign-here-detector/train.sh"])
 
 
 def save_files(annot: FileStorage, image: FileStorage):
