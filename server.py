@@ -39,7 +39,7 @@ def num_of_folders():
 
 
 def run_script():
-    subprocess.run(["/forger/sign-here-detector/train.sh"])
+    subprocess.run(["/bin/bash", "/forger/sign-here-detector/train.sh"])
 
 
 def save_files(annot: FileStorage, image: FileStorage):
