@@ -34,8 +34,8 @@ if __name__ == '__main__':
 
     # DOWNLOAD CHECKPOINT
 
-    url = 'http://34.16.177.159:5000/download_checkpoint'
-    local_filename = 'test.onnx'
-
-    downloaded_file = download_file(url, local_filename, headers=headers)
-    print(f"File downloaded as: {downloaded_file}")
+    # url = 'http://34.16.177.159:5000/download_checkpoint'
+    # local_filename = 'test.onnx'
+    #
+    # downloaded_file = download_file(url, local_filename, headers=headers)
+    # print(f"File downloaded as: {downloaded_file}")
