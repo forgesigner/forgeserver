@@ -1,3 +1,5 @@
+from datetime import datetime
+import re
 import subprocess
 from dataclasses import dataclass
 from typing import Union
@@ -72,6 +74,19 @@ def process_files(files):
     return processed_files
 
 
+def extract_datetime_from_name(name):
+    match = re.search(r'\d{8}-\d{6}', name)
+    if match:
+        return datetime.strptime(match.group(), '%Y%m%d-%H%M%S')
+    return None
+
+
+def get_last_train_directory(base_path):
+    directories = [d for d in os.listdir(base_path) if os.path.isdir(os.path.join(base_path, d))]
+    sorted_directories = sorted(directories, key=lambda x: extract_datetime_from_name(x) or datetime.min)
+    return os.path.join(base_path, sorted_directories[-1])
+
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     api_key = request.headers.get('Authorization')
@@ -98,10 +113,15 @@ def upload_file():
 
 @app.route('/download_checkpoint')
 def download_file():
-    directory = "/root/forger/checkpoints"
+    api_key = request.headers.get('Authorization')
+    if not is_authorized(api_key):
+        return jsonify({"error": "Unauthorized"}), 401
+
+    directory = get_last_train_directory("/root/forger/checkpoints")
     try:
         return send_from_directory(directory, 'best_checkpoint.pth', as_attachment=True)
     except FileNotFoundError:
+        print('File not found')
         abort(404)
 
 
