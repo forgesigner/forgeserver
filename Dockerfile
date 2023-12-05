@@ -10,7 +10,7 @@ FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA_SHORT}-cudnn${CUDNN}-devel
 WORKDIR /root/forger/forgeserver
 COPY signheredetector /root/forger/signheredetector
 COPY signheredetectordataset /root/forger/signheredetectordataset
-COPY . .
+COPY forgeserver .
 
 COPY forgeserver/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
