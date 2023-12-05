@@ -12,7 +12,7 @@ COPY signheredetector /root/forger/signheredetector
 COPY signheredetectordataset /root/forger/signheredetectordataset
 COPY . .
 
-COPY requirements.txt ./
+COPY forgeserver/requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
