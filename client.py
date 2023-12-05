@@ -23,7 +23,6 @@ if __name__ == '__main__':
         ('/home/xram/Desktop/2.json', '/home/xram/Desktop/2.png'),
     ]
 
-
     files = {}
     for i, (file1_path, file2_path) in enumerate(file_pairs):
         files[f'annot_{i}'] = open(file1_path, 'rb')
