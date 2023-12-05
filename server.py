@@ -2,7 +2,7 @@ import subprocess
 from dataclasses import dataclass
 from typing import Union
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory, abort
 from werkzeug.datastructures import FileStorage
 
 from config import API_KEY
@@ -94,6 +94,15 @@ def upload_file():
         save_files(processed_files[idx].annot, processed_files[idx].image)
 
     return jsonify({"message": "Files successfully uploaded"}), 200
+
+
+@app.route('/download_checkpoint')
+def download_file():
+    directory = "/root/forger/checkpoints"
+    try:
+        return send_from_directory(directory, 'best_checkpoint.pth', as_attachment=True)
+    except FileNotFoundError:
+        abort(404)
 
 
 if __name__ == '__main__':
