@@ -32,6 +32,7 @@ if __name__ == '__main__':
     for file in files.values():
         file.close()
 
+
     # DOWNLOAD CHECKPOINT
 
     # url = 'http://34.16.177.159:5000/download_checkpoint'
