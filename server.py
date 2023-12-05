@@ -119,7 +119,7 @@ def download_file():
 
     directory = get_last_train_directory("/root/forger/checkpoints")
     try:
-        return send_from_directory(directory, 'best_checkpoint.pth', as_attachment=True)
+        return send_from_directory(directory, 'best_checkpoint.onnx', as_attachment=True)
     except FileNotFoundError:
         print('File not found')
         abort(404)

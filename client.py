@@ -14,24 +14,28 @@ def download_file(url, local_filename, headers):
 
 
 if __name__ == '__main__':
-    # url = 'http://34.16.177.159:5000/upload'
-    headers = {'Authorization': API_KEY}
-    # file_pairs = [
-    #     ('/home/xram/Desktop/1.json', '/home/xram/Desktop/1.png'),
-    #     ('/home/xram/Desktop/2.json', '/home/xram/Desktop/2.png'),
-    # ]
-    #
-    # files = {}
-    # for i, (file1_path, file2_path) in enumerate(file_pairs):
-    #     files[f'annot_{i}'] = open(file1_path, 'rb')
-    #     files[f'image_{i}'] = open(file2_path, 'rb')
-    #
-    # response = requests.post(url, headers=headers, files=files)
-    # for file in files.values():
-    #     file.close()
+    # UPLOAD FILES
 
-    url = 'http://34.16.177.159:5000/download_checkpoint'  # URL of the file on the server
-    local_filename = 'test.pth'  # Local name for the downloaded file
+    url = 'http://34.16.177.159:5000/upload'
+    headers = {'Authorization': API_KEY}
+    file_pairs = [
+        ('/home/xram/Desktop/1.json', '/home/xram/Desktop/1.png'),
+        ('/home/xram/Desktop/2.json', '/home/xram/Desktop/2.png'),
+    ]
+
+    files = {}
+    for i, (file1_path, file2_path) in enumerate(file_pairs):
+        files[f'annot_{i}'] = open(file1_path, 'rb')
+        files[f'image_{i}'] = open(file2_path, 'rb')
+
+    response = requests.post(url, headers=headers, files=files)
+    for file in files.values():
+        file.close()
+
+    # DOWNLOAD CHECKPOINT
+
+    url = 'http://34.16.177.159:5000/download_checkpoint'
+    local_filename = 'test.onnx'
 
     downloaded_file = download_file(url, local_filename, headers=headers)
     print(f"File downloaded as: {downloaded_file}")
