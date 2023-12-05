@@ -8,6 +8,7 @@ from werkzeug.datastructures import FileStorage
 from config import API_KEY
 import os
 
+
 app = Flask(__name__)
 
 app.config['IMAGES'] = '/root/forger/signheredetectordataset/CUAD_v1_rasterized'
