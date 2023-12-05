@@ -1,5 +1,6 @@
 SERVER_CONTAINER="server"
-sudo docker build . -t $SERVER_CONTAINER
+cd /home/nikita_khramov/forger
+sudo docker build . -f /home/nikita_khramov/forger/forgeserver/Dockerfile -t $SERVER_CONTAINER
 PWD=$(pwd)
 
 if [ "$(sudo docker ps -a -q -f name=$SERVER_CONTAINER)" ]; then
