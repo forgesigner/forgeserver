@@ -16,4 +16,5 @@ if [ "$(sudo docker ps -a -q -f name=$SERVER_CONTAINER)" ]; then
 fi
 
 sudo docker run -d -v /home/nikita_khramov/forger/signheredetector:/root/forger/signheredetector -v /home/nikita_khramov/forger/signheredetectordataset:/root/forger/signheredetectordataset -p 5000:5000 --name $SERVER_CONTAINER --restart unless-stopped $SERVER_CONTAINER
+sudo docker exec $SERVER_CONTAINER wandb login 41acefe7cea08aefe86fe2e5748565b8dda71b4a
 sudo docker logs $SERVER_CONTAINER
