@@ -90,7 +90,6 @@ def get_last_train_directory(base_path):
 @app.route('/upload', methods=['POST'])
 def upload_file():
     api_key = request.headers.get('Authorization')
-
     if not is_authorized(api_key):
         return jsonify({"error": "Unauthorized"}), 401
 
