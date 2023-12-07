@@ -43,6 +43,7 @@ def num_of_folders():
 def run_script():
     subprocess.run(["/bin/bash", "/root/forger/signheredetector/train.sh"])
 
+
 def save_files(annot: FileStorage, image: FileStorage):
     n = num_of_folders()
     os.mkdir(os.path.join(app.config['IMAGES'], "0" * (5 - len(str(n))) + str(n)))
