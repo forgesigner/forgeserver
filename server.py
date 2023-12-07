@@ -111,7 +111,6 @@ def upload_file():
     return jsonify({"message": "Files successfully uploaded"}), 200
 
 
-
 @app.route('/download_checkpoint')
 def download_file():
     api_key = request.headers.get('Authorization')
